@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+   emailjs.init({
+     publicKey: "TSfaFHN7HUtT7K8hS",
+   });
+</script>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Janardhanapalli Dasara 2K26</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>🙏 Janardhanapalli Dasara 2K26</h1>
+
+    <p>Sri Sunkulamma Devi Navaratri Utsavams</p>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <a id="navHome" href="#home">Home</a>
+
+    <a id="navPrograms" href="#events">Programs</a>
+
+    <a id="navUpdates" href="#updates">Updates</a>
+
+    <a id="navGallery" href="#gallery">Gallery</a>
+
+    <a id="navLogin" href="#login">Login</a>
+
+</nav>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+    <div class="language-buttons">
+
+        <button onclick="setLanguage('en')">
+            🇬🇧 English
+        </button>
+
+        <button onclick="setLanguage('te')">
+            🇮🇳 తెలుగు
+        </button>
+
+    </div>
+
+
+    <h2 id="welcomeTitle">
+        Dasara Navaratri 2K26
+    </h2>
+
+
+    <p id="welcomeText">
+        Welcome to Janardhanapalli Dasara Navaratri.
+    </p>
+
+
+    <button onclick="speakWelcome()">
+
+        🔊 <span id="voiceButton">
+            Hear Welcome
+        </span>
+
+    </button>
+
+
+    <br><br>
+
+
+    <button id="viewPrograms" onclick="showPrograms()">
+
+        📅 View Programs
+
+    </button>
+
+</section>
+<h2>🔴 Live Admin Updates</h2>
+
+<div id="liveAnnouncements" class="updates-container">
+</div>
+
+
+<!-- PROGRAMS -->
+
+<section id="events">
+
+    <h2 id="programTitle">
+        📅 Navaratri Programs
+    </h2>
+
+
+    <div class="program-container">
+
+
+        <div class="program-card">
+
+            <h3>🌺 Day 1</h3>
+
+            <p id="day1">
+                🙏 Ganapati Puja
+            </p>
+
+        </div>
+
+
+        <div class="program-card">
+
+            <h3>🌺 Day 2</h3>
+
+            <p id="day2">
+                🕉️ Rudra Abhishekam
+            </p>
+
+        </div>
+
+
+        <div class="program-card">
+
+            <h3>🌺 Day 3</h3>
+
+            <p id="day3">
+                🌸 Lalitha Devi Pooja
+            </p>
+
+        </div>
+
+
+        <div class="program-card">
+
+            <h3>🌺 Day 4</h3>
+
+            <p id="day4">
+                🪔 Sudarshana Pooja
+            </p>
+
+        </div>
+
+
+        <div class="program-card">
+
+            <h3>🌺 Day 5</h3>
+
+            <p id="day5">
+                🌿 Ayushya & Medha Dakshinamurthy Pooja
+            </p>
+
+        </div>
+
+
+        <div class="program-card">
+
+            <h3>🌺 Day 6</h3>
+
+            <p id="day6">
+                🌸 Lakshmi & Saraswathi Pooja
+            </p>
+
+        </div>
+
+
+        <div class="program-card">
+
+            <h3>🌺 Day 7</h3>
+
+            <p id="day7">
+                ⚔️ Durga Pooja
+            </p>
+
+        </div>
+
+
+        <div class="program-card">
+
+            <h3>🌺 Day 8</h3>
+
+            <p id="day8">
+                🌟 Navagraha & Anjaneya Swamy Pooja
+            </p>
+
+        </div>
+
+
+        <!-- SPECIAL EVENT -->
+
+        <div class="program-card">
+
+            <h3>🌺 Special Event</h3>
+
+            <p id="specialEvent">
+                🛕 Ammavari Ooregimpu — October 20
+            </p>
+
+            <p id="meravani">
+                🥁 Meravani starts at 5:30 PM
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- UPDATES -->
+
+<section id="updates">
+
+    <h2 id="updatesTitle">
+        📢 Latest Updates
+    </h2>
+
+
+    <div class="updates-container">
+
+
+        <div class="update-card">
+
+            <span class="update-badge">
+                NEW
+            </span>
+
+            <h3>🌺 Dasara Navaratri 2K26</h3>
+
+            <p id="latestText">
+
+                Sri Sunkulamma Devi Navaratri celebrations
+                will be conducted with special poojas and events.
+
+            </p>
+
+        </div>
+
+
+        <div class="update-card">
+
+            <span class="update-badge">
+                UPDATE
+            </span>
+
+            <h3>🙏 Special Poojas</h3>
+
+            <p id="specialText">
+
+                Special devotional programs will be updated here.
+
+            </p>
+
+        </div>
+
+
+        <div class="update-card">
+
+            <span class="update-badge">
+                INFO
+            </span>
+
+            <h3>📢 Announcements</h3>
+
+            <p id="announcementText">
+
+                Check this section for the latest announcements.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+    <h2 id="galleryTitle">
+        🖼️ Dasara 2K26 Gallery
+    </h2>
+
+
+    <p class="gallery-intro" id="galleryText">
+
+        Photos and videos of Janardhanapalli
+        Dasara Navaratri celebrations.
+
+    </p>
+
+
+    <div class="gallery-container">
+
+
+        <div class="gallery-item">
+
+            <div class="gallery-placeholder">
+                🌺
+            </div>
+
+            <h3 id="celebrations">
+                Dasara Celebrations
+            </h3>
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <div class="gallery-placeholder">
+                🛕
+            </div>
+
+            <h3 id="temple">
+                Sri Sunkulamma Devi Temple
+            </h3>
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <div class="gallery-placeholder">
+                🙏
+            </div>
+
+            <h3 id="poojas">
+                Special Poojas
+            </h3>
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <div class="gallery-placeholder">
+                🎥
+            </div>
+
+            <h3 id="videos">
+                Videos
+            </h3>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- LOGIN -->
+
+<section id="login">
+
+    <h2 id="loginTitle">
+        🔐 User Login
+    </h2>
+
+
+    <p id="loginText">
+
+        Real mobile OTP login will be added with Firebase.
+
+    </p>
+
+
+    <button id="loginButton">
+
+        📱 Login with Mobile OTP
+
+    </button>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p id="footerText">
+
+        © 2026 Janardhanapalli Dasara Navaratri
+
+    </p>
+
+
+    <p id="jaiText">
+
+        🙏 Jai Maa Sunkulamma Devi 🙏
+
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

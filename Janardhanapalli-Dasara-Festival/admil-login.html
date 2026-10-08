@@ -1,0 +1,117 @@
+[7:58 pm, 07/10/2026] Challa Sujith Chowdary:     <div id="announcementLi…
+[8:00 pm, 07/10/2026] Challa Sujith Chowdary: <!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login - Janardhanapalli Dasara</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>🔐 Admin Login</h1>
+
+    <p>Janardhanapalli Dasara 2K26</p>
+
+</header>
+
+
+<section>
+
+    <div class="program-card"
+         style="max-width:450px; margin:auto;">
+
+        <h2>👨‍💼 Administrator</h2>
+
+        <br>
+
+        <input
+            type="text"
+            id="username"
+            placeholder="Enter username"
+            style="width:90%; padding:12px; margin:10px;"
+        >
+
+        <br>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter password"
+            style="width:90%; padding:12px; margin:10px;"
+        >
+
+        <br><br>
+
+        <button onclick="adminLogin()">
+            🔑 Login
+        </button>
+
+        <p id="message"
+           style="margin-top:20px;">
+        </p>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>🙏 Janardhanapalli Dasara 2K26</p>
+
+</footer>
+
+
+<script>
+
+function adminLogin() {
+
+    let username =
+        document.getElementById("username").value;
+
+    let password =
+        document.getElementById("password").value;
+
+
+    /*
+       DEMO LOGIN ONLY
+
+       We will replace this with
+       secure authentication later.
+    */
+
+    if (
+        username === "admin" &&
+        password === "dasara2026"
+    ) {
+
+        alert("✅ Login successful!");
+
+        window.location.href =
+            "admin.html";
+
+    } else {
+
+        document.getElementById("message").innerText =
+            "❌ Invalid username or password.";
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>

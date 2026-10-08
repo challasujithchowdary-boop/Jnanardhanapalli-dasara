@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>🔐 Admin Dashboard</h1>
+
+    <p>Janardhanapalli Dasara 2K26</p>
+
+</header>
+
+
+<section>
+
+    <h2>📢 Manage Announcements</h2>
+
+    <div class="program-card">
+
+        <input
+            type="text"
+            id="announcement"
+            placeholder="Enter announcement"
+            style="width:90%; padding:12px; margin:10px;"
+        >
+
+        <br>
+
+        <button onclick="addAnnouncement()">
+            ➕ Add Announcement
+        </button>
+
+    </div>
+
+    <div id="announcementList"></div>
+
+</section>
+
+
+
+<section>
+
+    <h2>📅 Manage Programs</h2>
+
+    <div class="program-card">
+
+        <input
+            type="text"
+            id="program"
+            placeholder="Enter program"
+            style="width:90%; padding:12px; margin:10px;"
+        >
+
+        <br>
+
+        <button onclick="addProgram()">
+            ➕ Add Program
+        </button>
+
+    </div>
+
+    <div id="programList"></div>
+
+</section>
+
+
+
+<section>
+
+    <h2>🖼️ Gallery Manager</h2>
+
+    <div class="program-card">
+
+        <input
+            type="text"
+            id="galleryTitle"
+            placeholder="Enter gallery title"
+            style="width:90%; padding:12px; margin:10px;"
+        >
+
+        <br>
+
+        <button onclick="addGallery()">
+            ➕ Add Gallery Item
+        </button>
+
+    </div>
+
+    <div id="galleryList"></div>
+
+</section>
+
+
+
+<footer>
+
+    <p>🙏 Janardhanapalli Dasara 2K26</p>
+
+</footer>
+
+
+
+<script>
+
+
+/* =========================
+   ANNOUNCEMENTS
+========================= */
+
+
+function addAnnouncement() {
+
+    let input =
+        document.getElementById("announcement");
+
+    let text = input.value.trim();
+
+
+    if (text === "") {
+
+        alert("Please enter an announcement.");
+
+        return;
+
+    }
+
+
+    let announcements =
+        JSON.parse(
+            localStorage.getItem("announcements")
+        ) || [];
+
+
+    announcements.push(text);
+
+
+    localStorage.setItem(
+        "announcements",
+        JSON.stringify(announcements)
+    );
+
+
+    input.value = "";
+
+    displayAnnouncements();
+
+}
+
+
+
+function displayAnnouncements() {
+
+    let list =
+        document.getElementById("announcementList");
+
+    list.innerHTML = "";
+
+
+    let announcements =
+        JSON.parse(
+            localStorage.getItem("announcements")
+        ) || [];
+
+
+    announcements.forEach(
+        function(text, index) {
+
+            let item =
+                document.createElement("div");
+
+            item.className = "update-card";
+
+
+            item.innerHTML =
+                `
+                📢 ${text}
+
+                <br><br>
+
+                <button onclick="deleteAnnouncement(${index})">
+                    🗑️ Delete
+                </button>
+                `;
+
+
+            list.appendChild(item);
+
+        }
+    );
+
+}
+
+
+
+function deleteAnnouncement(index) {
+
+    let announcements =
+        JSON.parse(
+            localStorage.getItem("announcements")
+        ) || [];
+
+
+    announcements.splice(index, 1);
+
+
+    localStorage.setItem(
+        "announcements",
+        JSON.stringify(announcements)
+    );
+
+
+    displayAnnouncements();
+
+}
+
+
+
+/* =========================
+   PROGRAMS
+========================= */
+
+
+function addProgram() {
+
+    let input =
+        document.getElementById("program");
+
+    let text = input.value.trim();
+
+
+    if (text === "") {
+
+        alert("Please enter a program.");
+
+        return;
+
+    }
+
+
+    let programs =
+        JSON.parse(
+            localStorage.getItem("programs")
+        ) || [];
+
+
+    programs.push(text);
+
+
+    localStorage.setItem(
+        "programs",
+        JSON.stringify(programs)
+    );
+
+
+    input.value = "";
+
+    displayPrograms();
+
+}
+
+
+
+function displayPrograms() {
+
+    let list =
+        document.getElementById("programList");
+
+    list.innerHTML = "";
+
+
+    let programs =
+        JSON.parse(
+            localStorage.getItem("programs")
+        ) || [];
+
+
+    programs.forEach(
+        function(text, index) {
+
+            let item =
+                document.createElement("div");
+
+            item.className =
+                "program-card";
+
+
+            item.innerHTML =
+                `
+                📅 ${text}
+
+                <br><br>
+
+                <button onclick="deleteProgram(${index})">
+                    🗑️ Delete
+                </button>
+                `;
+
+
+            list.appendChild(item);
+
+        }
+    );
+
+}
+
+
+
+function deleteProgram(index) {
+
+    let programs =
+        JSON.parse(
+            localStorage.getItem("programs")
+        ) || [];
+
+
+    programs.splice(index, 1);
+
+
+    localStorage.setItem(
+        "programs",
+        JSON.stringify(programs)
+    );
+
+
+    displayPrograms();
+
+}
+
+
+
+/* =========================
+   GALLERY
+========================= */
+
+
+function addGallery() {
+
+    let input =
+        document.getElementById("galleryTitle");
+
+    let text = input.value.trim();
+
+
+    if (text === "") {
+
+        alert("Please enter a gallery title.");
+
+        return;
+
+    }
+
+
+    let gallery =
+        JSON.parse(
+            localStorage.getItem("gallery")
+        ) || [];
+
+
+    gallery.push(text);
+
+
+    localStorage.setItem(
+        "gallery",
+        JSON.stringify(gallery)
+    );
+
+
+    input.value = "";
+
+    displayGallery();
+
+}
+
+
+
+function displayGallery() {
+
+    let list =
+        document.getElementById("galleryList");
+
+    list.innerHTML = "";
+
+
+    let gallery =
+        JSON.parse(
+            localStorage.getItem("gallery")
+        ) || [];
+
+
+    gallery.forEach(
+        function(text, index) {
+
+            let item =
+                document.createElement("div");
+
+            item.className =
+                "gallery-item";
+
+
+            item.innerHTML =
+                `
+                🖼️ ${text}
+
+                <br><br>
+
+                <button onclick="deleteGallery(${index})">
+                    🗑️ Delete
+                </button>
+                `;
+
+
+            list.appendChild(item);
+
+        }
+    );
+
+}
+
+
+
+function deleteGallery(index) {
+
+    let gallery =
+        JSON.parse(
+            localStorage.getItem("gallery")
+        ) || [];
+
+
+    gallery.splice(index, 1);
+
+
+    localStorage.setItem(
+        "gallery",
+        JSON.stringify(gallery)
+    );
+
+
+    displayGallery();
+
+}
+
+
+
+/* =========================
+   LOAD SAVED DATA
+========================= */
+
+
+displayAnnouncements();
+
+displayPrograms();
+
+displayGallery();
+
+
+</script>
+
+</body>
+
+</html>
